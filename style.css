@@ -1,25 +1,115 @@
+/* General Body Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
+  margin: auto;
+  padding: 20px;
   line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
+/* Header */
 header {
   text-align: center;
-  margin-bottom: 40px;
+  padding: 30px 20px;
+  background: linear-gradient(90deg, #4b79a1, #283e51);
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
-h1 {
+header h1 {
+  font-size: 2.5em;
   margin-bottom: 5px;
 }
 
-h2 {
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 5px;
+header p {
+  font-size: 1.1em;
+  margin-top: 0;
 }
 
+/* Navigation */
+nav {
+  margin-top: 15px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: bold;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+  border-bottom: 2px solid #ffd700;
+  padding-bottom: 2px;
+}
+
+/* Sections */
+section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+section h2 {
+  border-bottom: 2px solid #4b79a1;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  color: #283e51;
+}
+
+/* Project Cards */
+.project {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-left: 4px solid #4b79a1;
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.project:hover {
+  transform: translateY(-3px);
+}
+
+.project h3 {
+  color: #4b79a1;
+  margin-bottom: 5px;
+}
+
+.project a {
+  color: #4b79a1;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.project a:hover {
+  color: #ff7f50;
+}
+
+/* Skills */
 ul {
-  list-style-type: square;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 40px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
 }
