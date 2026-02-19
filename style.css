@@ -31,11 +31,12 @@ header p {
 
 /* Navigation */
 nav {
+  text-align: center;
   margin-top: 15px;
 }
 
 nav a {
-  margin: 0 15px;
+  margin: 0 12px;
   text-decoration: none;
   color: #e0e0e0;
   font-weight: bold;
@@ -104,6 +105,45 @@ li {
   margin-bottom: 8px;
 }
 
+/* Contact Section */
+#contact {
+  text-align: center;
+  background-color: #f0f4f8;
+  padding: 30px 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#contact h2 {
+  color: #283e51;
+  margin-bottom: 20px;
+}
+
+/* Contact Buttons */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-button {
+  background-color: #4b79a1;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-button:hover {
+  background-color: #283e51;
+  transform: translateY(-3px);
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -112,4 +152,38 @@ footer {
   margin-top: 40px;
   padding-top: 10px;
   border-top: 1px solid #ddd;
+}
+
+/* ---------------- Mobile Responsiveness ---------------- */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  nav a {
+    display: block;
+    margin: 8px 0;
+  }
+
+  section, #contact {
+    padding: 15px;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-button {
+    font-size: 1em;
+    padding: 12px 20px;
+  }
 }
