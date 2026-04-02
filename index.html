@@ -2,83 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Shreya K | Software Engineering Student</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shreya Kamalakannan | Software Engineering Student</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DY1R0X2Y34"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-DY1R0X2Y34');
   </script>
 </head>
+
 <body>
 
-  <header>
-    <h1>Shreya Kamalakannan</h1>
-    <p>Software Engineering Student | Python Scripting & Backend Development | Co-op Candidate</p>
-    <nav>
+  <nav class="navbar">
+    <div class="logo">Shreya Kamalakannan</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
       <a href="ShreyaK_Resume.pdf" target="_blank">Resume</a>
-    </nav>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <h1> Hi, I'm Shreya
+      <span class="subtitle">Software Engineering Student</span>
+    </h1>
   </header>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Software Engineering student with experience in object-oriented programming,
-      web development, database-backed applications, and automation scripting. Seeking
-      co-op opportunities to contribute to real-world systems and strengthen technical
-      skills in a professional environment.
-    </p>
+    <div class="content">
+      <h2>About Me</h2>
+      <p>
+        Hi! I’m Shreya, a Software Engineering student who enjoys building and designing applications solve problems.
+        I have been working on projects ranging from web applications to automation scripts, and I’m especially interested
+        in how software can simplify everyday tasks.
+      </p>
+
+      <p>
+        Recently, I’ve been exploring backend development and data-focused tools, building projects beyond my
+        coursework that push me to learn independently. I’m currently looking for co-op opportunities where I can
+        contribute, learn from experienced developers, and grow in a real-world environment.
+      </p>
+    </div>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <div class="content">
+      <h2>Projects</h2>
 
-    <div class="project">
-      <h3>Painting Gallery Web Application</h3>
-      <p>A PHP & MySQL web app that allows users to view, add, and delete paintings. Implements full CRUD functionality and server-side processing.</p>
-      <p><strong>Technologies:</strong> PHP, MySQL, HTML, CSS</p>
-      <a href="https://github.com/Shr-eyaK/painting-gallery" target="_blank">View Code on GitHub</a>
+      <div class="project">
+        <h3>Painting Gallery Web Application</h3>
+        <p>A PHP & MySQL web app that allows users to view, add, and delete paintings.</p>
+        <a href="https://github.com/Shr-eyaK/painting-gallery" target="_blank">View Code</a>
+      </div>
+
+      <div class="project">
+        <h3>University Course Management System</h3>
+        <p>Java OOP system managing courses, instructors, and students.</p>
+        <a href="https://github.com/Shr-eyaK/university-course-management" target="_blank">View Code</a>
+      </div>
+
+      <div class="project">
+        <h3>Job Parser (In Progress)</h3>
+        <p>Python script extracting job data into CSV for analysis.</p>
+        <a href="https://github.com/Shr-eyaK/job-automation" target="_blank">View Code</a>
+      </div>
+
     </div>
-
-    <div class="project">
-      <h3>University Course Management System</h3>
-      <p>Java-based object-oriented system to manage departments, courses, instructors, students, and enrollments. Built using inheritance, aggregation, and ArrayList-based relationships.</p>
-      <p><strong>Technologies:</strong> Java, OOP, UML</p>
-      <a href="https://github.com/Shr-eyaK/university-course-management" target="_blank">View Code on GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>Job Description Parser (Python Automation, In Progress)</h3>
-      <p>A Python script that extracts company names and roles from job postings, organizes the information into a CSV, and supports job trend analysis for skill and role demand insights.</p>
-      <p><strong>Technologies:</strong> Python, CSV, Regex, CLI workflows, Data Analysis</p>
-      <a href="https://github.com/Shr-eyaK/job-automation" target="_blank">View Code on GitHub</a>
-    </div>
-
   </section>
 
   <section id="skills">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Programming:</strong> Java, PHP, Python (scripting & file processing)</li>
-      <li><strong>Web:</strong> HTML, CSS, JavaScript</li>
-      <li><strong>Databases & Tools:</strong> SQL, Git, GitHub, CLI workflows</li>
-      <li><strong>Applied Experience:</strong> Automation scripting, data handling, website management, trend analysis, data-driven insights</li>
-    </ul>
+    <div class="content">
+      <h2>Skills</h2>
+      <ul>
+        <li>Java, Python, PHP</li>
+        <li>HTML, CSS, JavaScript</li>
+        <li>SQL, Git, GitHub</li>
+        <li>Automation & Data Analysis</li>
+      </ul>
+    </div>
   </section>
 
   <section id="contact">
-    <h2>Contact & Connect</h2>
-    <div class="contact-buttons">
-      <a href="mailto:shreya.kamalakannan@ontariotechu.net" class="contact-button">Email Me</a>
-      <a href="https://www.linkedin.com/in/shreya-k-317865361/" target="_blank" class="contact-button">LinkedIn</a>
+    <div class="content">
+      <h2>Contact</h2>
+      <div class="contact-buttons">
+        <a href="mailto:shreya.kamalakannan@ontariotechu.net">Email</a>
+        <a href="https://www.linkedin.com/in/shreya-k-317865361/" target="_blank">LinkedIn</a>
+      </div>
     </div>
   </section>
 
