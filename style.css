@@ -66,7 +66,7 @@ header, section {
 }
 
 .hero {
-  background: linear-gradient(90deg, #7967be, #1a1c83);
+  background: linear-gradient(90deg, #cfc3fc, #4439b8);
   color: white;
   text-align: center;
 }
@@ -173,7 +173,7 @@ li {
 }
 
 .contact-buttons a:hover {
-  background: #4b79a1;
+  background: #564bcc;
   color: white;
 }
 footer {
