@@ -112,14 +112,21 @@ h2 {
   color: #283e51;
 }
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
 .project {
   background: white;
   padding: 20px;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  margin-bottom: 20px;
   transition: 0.3s;
   text-align: left;
+  margin-bottom: 0;
 }
 
 .project:hover {
@@ -140,6 +147,14 @@ h2 {
 
 .project a:hover {
   color: #ff7f50;
+}
+
+.project-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 ul {
@@ -184,6 +199,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .hero h1 {
     font-size: 2.5rem;
   }
