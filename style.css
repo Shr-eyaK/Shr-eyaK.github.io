@@ -1,95 +1,155 @@
+:root {
+  --night: #0a0e2a;
+  --indigo: #18215a;
+  --deep: #10173f;
+  --moon: #ffd84d;
+  --ghost: #ff7ac0;
+  --cyan: #62e6ff;
+  --ink: #e9edff;
+  --mute: #a3acd9;
+  --px: 'Press Start 2P', ui-monospace, monospace;
+  --sans: 'Inter', system-ui, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-padding-top: 90px;
+  scroll-snap-type: y proximity;
+}
+
+/* Strict snapping on larger screens, gentler on phones so tall sections never trap scrolling */
+@media (min-width: 900px) {
+  html { scroll-snap-type: y mandatory; }
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
-  overflow-y: scroll;
-  color: #333;
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.65;
+  background: var(--night);
+  color: var(--ink);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+/* Starry sky canvas sits behind everything */
+#sky {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+nav, header, section, footer {
+  position: relative;
+  z-index: 1;
 }
 
 h1, h2, h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--px);
+  font-weight: 400;
 }
 
+/* ---------- Navbar + Pac-Man progress ---------- */
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
-  padding: 15px 40px;
+  left: 0;
+  right: 0;
+  padding: 12px 40px 8px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background: rgba(20, 30, 40, 0.7);
-  backdrop-filter: blur(10px);
+  row-gap: 8px;
+  background: rgba(10, 14, 42, 0.88);
+  border-bottom: 2px solid var(--indigo);
+  backdrop-filter: blur(8px);
   z-index: 1000;
 }
 
 .logo {
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
+  color: var(--ink);
+  font-family: var(--px);
+  font-size: 0.7rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: 22px;
 }
 
 .nav-links a {
-  color: white;
+  color: var(--ink);
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  font-size: 0.9rem;
+  transition: color 0.2s;
 }
 
 .nav-links a:hover {
-  color: #ffd700;
+  color: var(--moon);
 }
 
+.lane {
+  position: relative;
+  width: 100%;
+  height: 20px;
+}
+
+.pellets {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.pellets i {
+  width: 5px;
+  height: 5px;
+  background: var(--ink);
+  opacity: 0.8;
+}
+
+#pac {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--moon);
+  animation: chomp 0.35s steps(1) infinite;
+}
+
+@keyframes chomp {
+  0%, 100% { clip-path: polygon(100% 74%, 44% 48%, 100% 21%, 100% 0, 0 0, 0 100%, 100% 100%); }
+  50%      { clip-path: polygon(100% 50%, 50% 50%, 100% 50%, 100% 0, 0 0, 0 100%, 100% 100%); }
+}
+
+/* ---------- Layout ---------- */
 header, section {
-  height: 100vh;
   scroll-snap-align: start;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 80px 20px;
-}
-
-.hero {
-  background: linear-gradient(90deg, #cfc3fc, #4439b8);
-  color: white;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-}
-
-.hero p {
-  font-size: 1.3rem;
-  opacity: 0.9;
-}
-
-.subtitle {
-  display: block;
-  font-size: 1.3rem;
-  margin-top: 10px;
-  font-weight: normal;
-  opacity: 0.9;
-}
-
-#about p {
-  margin-bottom: 20px;
+  padding: 120px 20px 60px;
 }
 
 .content {
@@ -98,120 +158,205 @@ header, section {
   text-align: center;
 }
 
-section {
-  background: #f8fafc;
-}
-
-section:nth-child(even) {
-  background: #ffffff;
-}
-
 h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #283e51;
+  font-size: clamp(0.9rem, 2.6vw, 1.3rem);
+  line-height: 1.5;
+  margin-bottom: 32px;
+  color: var(--moon);
+  text-shadow: 3px 3px 0 var(--indigo);
 }
 
+#about p {
+  margin: 0 auto 20px;
+  max-width: 62ch;
+  color: var(--ink);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  position: relative;
+}
+
+.moon {
+  position: absolute;
+  right: 8%;
+  top: 22%;
+  width: clamp(90px, 16vw, 170px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff3b0, var(--moon) 55%, #e6a82a);
+  box-shadow: 0 0 0 14px rgba(255, 216, 77, 0.12), 0 0 0 32px rgba(255, 216, 77, 0.06), 0 0 90px rgba(255, 216, 77, 0.4);
+}
+
+.hero h1 {
+  position: relative;
+  font-size: clamp(1.3rem, 5.5vw, 3rem);
+  line-height: 1.4;
+  text-shadow: 4px 4px 0 var(--indigo);
+}
+
+.subtitle {
+  display: block;
+  font-family: var(--sans);
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  margin-top: 24px;
+  color: var(--cyan);
+  text-shadow: none;
+}
+
+/* ---------- Projects ---------- */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 28px;
   width: 100%;
 }
 
 .project {
-  background: white;
-  padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: 0.3s;
+  background: var(--deep);
+  padding: 24px;
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--indigo);
+  transition: transform 0.08s, box-shadow 0.08s;
   text-align: left;
-  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 var(--indigo);
+}
+
+.project.play {
+  border-color: var(--moon);
+  box-shadow: 6px 6px 0 var(--ghost);
 }
 
 .project h3 {
-  color: #564bcc;
-  margin-bottom: 10px;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.project p {
+  color: var(--mute);
+  font-size: 1rem;
 }
 
 .project a {
-  color: #564bcc;
+  color: var(--moon);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  margin-top: auto;
+  margin-right: 18px;
+  align-self: flex-start;
 }
 
 .project a:hover {
-  color: #ff7f50;
+  color: var(--ghost);
 }
 
 .project-img {
   width: 100%;
   height: 160px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
 
+/* ---------- Skills as inventory slots ---------- */
 ul {
   list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  text-align: left;
 }
 
 li {
-  margin-bottom: 10px;
+  border: 2px solid var(--indigo);
+  background: rgba(16, 23, 63, 0.75);
+  padding: 16px;
+  font-size: 1rem;
+  color: var(--mute);
 }
 
+/* ---------- Contact ---------- */
 .contact-buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
   margin-top: 15px;
 }
 
 .contact-buttons a {
-  background: transparent;
-  color:#564bcc;
-
-  padding: 22px 40px;
-  font-size: 1.3rem;
-  font-weight: 700;
-
-  border: 2px solid #564bcc;
-  border-radius: 8px;
+  font-family: var(--px);
+  font-size: 0.8rem;
+  color: var(--night);
+  background: var(--moon);
+  padding: 20px 28px;
   text-decoration: none;
-
-  transition: all 0.3s ease;
+  box-shadow: 4px 4px 0 var(--ghost);
+  transition: transform 0.08s, box-shadow 0.08s;
 }
 
 .contact-buttons a:hover {
-  background: #564bcc;
-  color: white;
-}
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  color: #666;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ghost);
 }
 
+footer {
+  scroll-snap-align: end;
+  text-align: center;
+  padding: 24px 20px calc(40px + env(safe-area-inset-bottom, 0px));
+  font-family: var(--px);
+  font-size: 0.6rem;
+  color: var(--mute);
+}
+
+/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
+  .navbar {
+    padding: 10px 16px 8px;
   }
-  
-  .hero h1 {
-    font-size: 2.5rem;
+
+  .logo {
+    display: none;
   }
 
   .nav-links {
-    gap: 15px;
+    gap: 14px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 
   .contact-buttons {
     flex-direction: column;
+    align-items: stretch;
   }
+
+  .moon {
+    top: 14%;
+    right: 6%;
+  }
+
+  header, section {
+    padding-top: 130px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  #pac { animation: none; }
+  .project, .contact-buttons a { transition: none; }
 }

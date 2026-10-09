@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>Shreya Kamalakannan | Software Engineering Student</title>
 
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DY1R0X2Y34"></script>
   <script>
@@ -19,6 +19,9 @@
 
 <body>
 
+  <!-- Starry night background (drawn by script.js) -->
+  <canvas id="sky" aria-hidden="true"></canvas>
+
   <nav class="navbar">
     <div class="logo">Shreya Kamalakannan</div>
     <div class="nav-links">
@@ -29,9 +32,15 @@
       <a href="#contact">Contact</a>
       <a href="ShreyaK_Resume.pdf" target="_blank">Resume</a>
     </div>
+    <!-- Pac-Man scroll progress -->
+    <div class="lane" aria-hidden="true">
+      <div class="pellets" id="pellets"></div>
+      <div id="pac"></div>
+    </div>
   </nav>
 
   <header id="home" class="hero">
+    <div class="moon" aria-hidden="true"></div>
     <h1>
       Hi, I'm Shreya
       <span class="subtitle">Software Engineering Student</span>
@@ -56,44 +65,54 @@
   <section id="projects">
     <div class="content">
       <h2>Projects</h2>
-      
-    <div class="projects-grid">
-      <div class="project">
-        <h3>Painting Gallery Web Application</h3>
-        <p>
-          Web application for managing a digital gallery of paintings using PHP and MySQL.
-          Implements CRUD operations with database-backed storage and a structured backend.
-        </p>
-        <a href="https://github.com/Shr-eyaK/painting-gallery" target="_blank">View Code</a>
-      </div>
 
-      <div class="project">
-        <h3>TaskFlow</h3>
-        <p>
-          JavaFX-based desktop application built using a modular object-oriented architecture.
-          Features separation of UI, business logic, and data layers with persistent JSON storage.
-        </p>
-        <a href="https://github.com/Shr-eyaK/taskflow" target="_blank">View Code</a>
-      </div>
+      <div class="projects-grid">
+        <div class="project">
+          <h3>Painting Gallery Web Application</h3>
+          <p>
+            Web application for managing a digital gallery of paintings using PHP and MySQL.
+            Implements CRUD operations with database-backed storage and a structured backend.
+          </p>
+          <a href="https://github.com/Shr-eyaK/painting-gallery" target="_blank">View Code</a>
+        </div>
 
-      <div class="project">
-        <h3>Job Description Parser</h3>
-        <p>
-          Python automation tool that extracts structured data from job postings, including roles, companies, and skills.
-          Outputs processed data into CSV format for analysis.
-        </p>
-        <a href="https://github.com/Shr-eyaK/job-automation" target="_blank">View Code</a>
-      </div>
-         <div class="project">
-        <h3>Spring Boot REST API</h3>
-        <p>
-          Simples Spring Boot REST API that returns JSON greeting responses.
-        </p>
-        <a href="https://github.com/Shr-eyaK/spring-rest-greeting" target="_blank">View Code</a>
-      </div>
+        <div class="project">
+          <h3>TaskFlow</h3>
+          <p>
+            JavaFX-based desktop application built using a modular object-oriented architecture.
+            Features separation of UI, business logic, and data layers with persistent JSON storage.
+          </p>
+          <a href="https://github.com/Shr-eyaK/taskflow" target="_blank">View Code</a>
+        </div>
 
-    </div>
+        <div class="project">
+          <h3>Job Description Parser</h3>
+          <p>
+            Python automation tool that extracts structured data from job postings, including roles, companies, and skills.
+            Outputs processed data into CSV format for analysis.
+          </p>
+          <a href="https://github.com/Shr-eyaK/job-automation" target="_blank">View Code</a>
+        </div>
 
+        <div class="project">
+          <h3>Spring Boot REST API</h3>
+          <p>
+            Simple Spring Boot REST API that returns JSON greeting responses.
+          </p>
+          <a href="https://github.com/Shr-eyaK/spring-rest-greeting" target="_blank">View Code</a>
+        </div>
+
+        <!-- Uncomment once your game is built and deployed, then fix the links.
+        <div class="project play">
+          <h3>Chomper</h3>
+          <p>
+            Pac-Man-style arcade game built from scratch with JavaScript and Canvas.
+          </p>
+          <a href="YOUR-GAME-URL" target="_blank">Play It</a>
+          <a href="https://github.com/Shr-eyaK/YOUR-REPO" target="_blank">View Code</a>
+        </div>
+        -->
+      </div>
     </div>
   </section>
 
@@ -124,5 +143,6 @@
     <p>© 2026 Shreya Kamalakannan</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
