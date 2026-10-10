@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>Shreya Kamalakannan | Software Engineering Student</title>
+  <meta name="description" content="Software engineering student building practical applications in Java, Python, PHP and the web.">
+  <meta property="og:title" content="Shreya Kamalakannan | Software Engineering Student">
+  <meta property="og:description" content="Software engineering student building practical applications in Java, Python, PHP and the web.">
+  <meta property="og:image" content="https://shr-eyak.github.io/linkedin-thumbnail.png">
+  <meta property="og:url" content="https://shr-eyak.github.io/">
+  <meta property="og:type" content="website">
 
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -22,30 +28,32 @@
   <!-- Starry night background (drawn by script.js) -->
   <canvas id="sky" aria-hidden="true"></canvas>
 
-  <nav class="navbar">
-    <div class="logo">Shreya Kamalakannan</div>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-      <a href="ShreyaK_Resume.pdf" target="_blank">Resume</a>
-    </div>
-    <!-- Pac-Man scroll progress -->
+  <header class="bar navbar">
     <div class="lane" aria-hidden="true">
       <div class="pellets" id="pellets"></div>
       <div id="pac"></div>
     </div>
-  </nav>
-
-  <header id="home" class="hero">
-    <div class="moon" aria-hidden="true"></div>
-    <h1>
-      Hi, I'm Shreya
-      <span class="subtitle">Software Engineering Student</span>
-    </h1>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
+
+  <section id="home" class="hero">
+    <div class="moon" aria-hidden="true"></div>
+    <h1>Hi, I'm Shreya</h1>
+    <p class="subtitle">Software Engineering Student</p>
+    <p class="focus">Backend &amp; Full-Stack · Java, Python, SQL</p>
+    <p class="lede">I build practical software with clean structure and usability in mind, and I like making games on the side.</p>
+    <p class="now"><span>NOW:</span> designing an intelligent route-planning agent from scratch</p>
+    <div class="btns">
+      <a class="btn" href="#projects">See my work</a>
+      <a class="btn alt" href="ShreyaK_Resume.pdf" target="_blank">Download resume</a>
+    </div>
+    <div class="hint">SCROLL TO FEED PAC-MAN</div>
+  </section>
 
   <section id="about">
     <div class="content">
@@ -59,6 +67,10 @@
         I'm currently developing my skills in backend systems, object-oriented design, and data handling through personal projects.
         I'm looking for co-op opportunities where I can contribute to real development teams and continue growing as a software developer.
       </p>
+
+      <p>
+        Outside of coursework, I like building games, which is where this site's retro look comes from.
+      </p>
     </div>
   </section>
 
@@ -68,12 +80,12 @@
 
       <div class="projects-grid">
         <div class="project">
-          <h3>Painting Gallery Web Application</h3>
+          <h3>Intelligent Route-Planning Agent</h3>
           <p>
-            Web application for managing a digital gallery of paintings using PHP and MySQL.
-            Implements CRUD operations with database-backed storage and a structured backend.
+            Python agent that finds optimal paths through a simulated graph, comparing Uniform Cost Search, Greedy Best-First and A* with a custom heuristic.
+            Evaluates path cost, nodes explored and runtime across graph sizes and densities.
           </p>
-          <a href="https://github.com/Shr-eyaK/painting-gallery" target="_blank">View Code</a>
+          <div class="tags"><span>Python</span><span>A* Search</span><span>Graph Algorithms</span><span class="wip">In development</span></div>
         </div>
 
         <div class="project">
@@ -82,7 +94,18 @@
             JavaFX-based desktop application built using a modular object-oriented architecture.
             Features separation of UI, business logic, and data layers with persistent JSON storage.
           </p>
+          <div class="tags"><span>Java</span><span>JavaFX</span><span>JSON</span></div>
           <a href="https://github.com/Shr-eyaK/taskflow" target="_blank">View Code</a>
+        </div>
+
+        <div class="project">
+          <h3>Painting Gallery Web Application</h3>
+          <p>
+            Web application for managing a digital gallery of paintings using PHP and MySQL.
+            Implements CRUD operations with database-backed storage and a structured backend.
+          </p>
+          <div class="tags"><span>PHP</span><span>MySQL</span><span>CRUD</span></div>
+          <a href="https://github.com/Shr-eyaK/painting-gallery" target="_blank">View Code</a>
         </div>
 
         <div class="project">
@@ -91,6 +114,7 @@
             Python automation tool that extracts structured data from job postings, including roles, companies, and skills.
             Outputs processed data into CSV format for analysis.
           </p>
+          <div class="tags"><span>Python</span><span>CSV</span><span>Automation</span></div>
           <a href="https://github.com/Shr-eyaK/job-automation" target="_blank">View Code</a>
         </div>
 
@@ -99,6 +123,7 @@
           <p>
             Simple Spring Boot REST API that returns JSON greeting responses.
           </p>
+          <div class="tags"><span>Java</span><span>Spring Boot</span><span>REST</span></div>
           <a href="https://github.com/Shr-eyaK/spring-rest-greeting" target="_blank">View Code</a>
         </div>
 
@@ -120,11 +145,11 @@
     <div class="content">
       <h2>Skills</h2>
       <ul>
-        <li>Languages: Java, Python, PHP, C++</li>
-        <li>Web: HTML, CSS, JavaScript</li>
-        <li>Databases: SQL, MySQL</li>
-        <li>Tools: Git, GitHub</li>
-        <li>Concepts: Object-oriented programming, basic system design, data handling</li>
+        <li><b>LANGUAGES</b><span>Java, Python, PHP, C++</span></li>
+        <li><b>WEB</b><span>HTML, CSS, JavaScript</span></li>
+        <li><b>DATABASES</b><span>SQL, MySQL</span></li>
+        <li><b>TOOLS</b><span>Git, GitHub</span></li>
+        <li><b>CONCEPTS</b><span>Object-oriented programming, basic system design, data handling</span></li>
       </ul>
     </div>
   </section>
@@ -140,7 +165,7 @@
   </section>
 
   <footer>
-    <p>© 2026 Shreya Kamalakannan</p>
+    <p>© 2026 SHREYA KAMALAKANNAN</p>
   </footer>
 
   <script src="script.js"></script>
