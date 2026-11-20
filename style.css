@@ -9,10 +9,9 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 56px;
-  scroll-snap-type: y proximity;
+  scroll-padding-top: 44px;
+  scroll-snap-type: y mandatory;
 }
-@media (min-width: 900px) { html { scroll-snap-type: y mandatory; } }
 
 body {
   font-family: var(--sans);
@@ -127,6 +126,9 @@ h2 {
 .hint { margin-top: 56px; font: 400 9px var(--px); color: var(--mute); }
 
 /* ---------- Projects ---------- */
+#projects {
+  padding: 40px 24px 80px;
+}
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
